@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio Pedro Bertoldo</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+    <!-- Navegação principal -->
+    <nav>
+        <div class="container">
+            <ul class="menu">
+                <!-- Links de âncora para seções da página -->
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <!-- Seção usando flexbox para dispor imagem e texto lado a lado -->
+            <div class="sobre-conteudo">
+                <!-- Imagem de perfil fictícia -->
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFRHmlrr_fSBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1678293002991?e=1747872000&v=beta&t=l0WNHN2N564xPPxDi62FgqrMlkS2dboA70XRzbdOnsk"
+                    alt="Foto de Perfil" class="perfil-img" />
+                <!-- Texto de apresentação -->
+                <div class="sobre-texto">
+                    <p>Olá! Meu nome é <strong>Pedro Bertoldo</strong> The Best Programmer <strong>EVER</strong>.</p>
+                    <p>Como um bom DevOps, é bom a maioria das coisas tem que estar em containeres...</p>
+                    <p><a href="https://www.linkedin.com/in/pedro-bertoldo-a68812252/">Linkedin</a></p>
+                    <p><a href="https://github.com/P3trwS">GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos">
+        <div class="container">
+            <h2>Projetos</h2>
+            <!-- Grid de projetos usando CSS Grid -->
+            <div class="projetos-grid">
+                <!-- Projeto 1 -->
+                <div class="projeto-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Projeto 1" class="projeto-img">
+                    <h3>Sistema de Gerenciamento de Tarefas</h3>
+                    <p>Aplicação web para gerenciar tarefas diárias. Permite criar, editar e marcar tarefas como
+                        concluídas. Desenvolvida com HTML, CSS e JavaScript.</p>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="projeto-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Projeto 2" class="projeto-img">
+                    <h3>Site de Previsão do Tempo</h3>
+                    <p>Site responsivo que exibe a previsão do tempo para diferentes cidades. Consome dados de uma API
+                        pública e mostra temperatura, umidade e condições climáticas em tempo real.</p>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="projeto-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Projeto 3" class="projeto-img">
+                    <h3>Jogo Educativo em JavaScript</h3>
+                    <p>Jogo simples desenvolvido em JavaScript para auxiliar no aprendizado de matemática básica. Inclui
+                        pontuação e níveis de dificuldade para tornar o aprendizado divertido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <!-- Lista de habilidades -->
+            <ul class="skills-list">
+                <li>Python
+                    <ul>
+                        <li>Pandas</li>
+                        <li>Pathlib</li>
+                        <li>Selenium</li>
+                        <li>Bs4</li>
+                        <li>Matplotlib</li>
+                        <li>Django</li>
+                        <li>Prefect</li>
+                    </ul>
+                </li>
+                <li>Java
+                    <ul>
+                        <li>JPA</li>
+                        <li>Spring Boot</li>
+                    </ul>
+                </li>
+                <li>SQL
+                    <ul>
+                        <li>Oracle</li>
+                        <li>PostgreSQL</li>
+                        <li>DBMaker</li>
+                    </ul>
+                </li>
+                <li>Docker</li>
+                <li>Linux</li>
+                <li>Power BI</li>
+                <li>Power Query</li>
+                <li>Power Pivot</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Entre em contato comigo preenchendo o formulário abaixo ou através das minhas redes sociais.</p>
+            <!-- Formulário de contato -->
+            <form>
+                <!-- Campo Nome -->
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+                <!-- Campo Email -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <!-- Campo Mensagem -->
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..."
+                        required></textarea>
+                </div>
+                <!-- Botão de envio -->
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Berts.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
