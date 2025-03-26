@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: rgb(0, 0, 0);
@@ -7,12 +12,46 @@ body {
 }
 
 strong {
-    color: #31979B;
+    color: #3d8bc1;
 }
 
-nav{
-    padding: 10px;
+a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    border: #3d8bc1 1px solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+nav {
+    padding: 5px;
+    align-items: center;
+    background-color: #1A1A1A;
+    border-bottom: #3d8bc1 1px solid;
+}
+
+.nav-header {
     display: flex;
     flex-direction: row;
-    background-color: #1A1A1A;
+    align-items: center;
+    justify-content: center;
+}
+
+#sobre {
+    margin: 10px;
+}
+
+.sobre-conteudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.sobre-texto{
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
 }
