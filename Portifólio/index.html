@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio Pedro Bertoldo</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/index.js"></script>
 </head>
 
 <body>
@@ -35,8 +36,10 @@
                 <div class="sobre-texto">
                     <p>Olá! Meu nome é <strong>Pedro Bertoldo</strong> The Best Programmer <strong>EVER</strong>.</p>
                     <p>Como um bom DevOps, é bom a maioria das coisas tem que estar em containeres...</p>
-                    <p><a href="https://www.linkedin.com/in/pedro-bertoldo-a68812252/">Linkedin</a></p>
-                    <p><a href="https://github.com/P3trwS">GitHub</a></p>
+                    <div class="sobre-botoes">
+                        <p><a href="https://www.linkedin.com/in/pedro-bertoldo-a68812252/">Linkedin</a></p>
+                        <p><a href="https://github.com/P3trwS">GitHub</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,33 +49,24 @@
     <section id="projetos">
         <div class="container">
             <h2>Projetos</h2>
-            <!-- Grid de projetos usando CSS Grid -->
-            <div class="projetos-grid">
-                <!-- Projeto 1 -->
-                <div class="projeto-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Projeto 1" class="projeto-img">
-                    <h3>Sistema de Gerenciamento de Tarefas</h3>
-                    <p>Aplicação web para gerenciar tarefas diárias. Permite criar, editar e marcar tarefas como
-                        concluídas. Desenvolvida com HTML, CSS e JavaScript.</p>
+            <div class="carrossel-wrapper">
+                <button class="seta esquerda" onclick="scrollProjetos(-1)">&#8592;</button>
+    
+                <div class="projetos-grid" id="projetosGrid">
+                    <!-- Cards -->
+                    <div class="projeto-card">Projeto 1</div>
+                    <div class="projeto-card">Projeto 2</div>
+                    <div class="projeto-card">Projeto 3</div>
+                    <div class="projeto-card">Projeto 4</div>
+                    <div class="projeto-card">Projeto 5</div>
+                    <!-- Adicione mais se quiser -->
                 </div>
-                <!-- Projeto 2 -->
-                <div class="projeto-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Projeto 2" class="projeto-img">
-                    <h3>Site de Previsão do Tempo</h3>
-                    <p>Site responsivo que exibe a previsão do tempo para diferentes cidades. Consome dados de uma API
-                        pública e mostra temperatura, umidade e condições climáticas em tempo real.</p>
-                </div>
-                <!-- Projeto 3 -->
-                <div class="projeto-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Projeto 3" class="projeto-img">
-                    <h3>Jogo Educativo em JavaScript</h3>
-                    <p>Jogo simples desenvolvido em JavaScript para auxiliar no aprendizado de matemática básica. Inclui
-                        pontuação e níveis de dificuldade para tornar o aprendizado divertido.</p>
-                </div>
+    
+                <button class="seta direita" onclick="scrollProjetos(1)">&#8594;</button>
             </div>
         </div>
     </section>
-
+    
     <!-- Seção Habilidades -->
     <section id="habilidades">
         <div class="container">

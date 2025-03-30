@@ -1,3 +1,5 @@
+/* GLOBAL */
+
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +26,8 @@ a {
     border-radius: 10px;
 }
 
+/* HEADER */
+
 nav {
     padding: 5px;
     align-items: center;
@@ -38,6 +42,8 @@ nav {
     justify-content: center;
 }
 
+/* SOBRE MIM */
+
 #sobre {
     margin: 10px;
 }
@@ -46,7 +52,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     margin: 10px;
 }
 
@@ -54,4 +60,64 @@ nav {
     padding: 10px;
     margin: 10px;
     text-align: left;
+}
+
+.sobre-botoes{
+    margin-top: 15px;
+}
+
+.sobre-botoes p{
+    padding: 10px;
+}
+
+/* PROJETOS */
+
+
+.carrossel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.projetos-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    scrollbar-width: none; /* Firefox */
+}
+.projetos-grid::-webkit-scrollbar {
+    display: none; /* Chrome */
+}
+
+.projeto-card {
+    min-width: 300px;
+    flex: 0 0 auto;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0.5rem;
+}
+.seta.esquerda {
+    left: 0;
+}
+.seta.direita {
+    right: 0;
 }
