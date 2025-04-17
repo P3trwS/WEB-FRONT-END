@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio Pedro Bertoldo</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script type="module" src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style_tenso.css" />
 </head>
 
 <body>
@@ -34,7 +33,7 @@
                     alt="Foto de Perfil" class="perfil-img" />
                 <!-- Texto de apresentação -->
                 <div class="sobre-texto">
-                    <p>Olá! Meu nome é <strong>Pedro Bertoldo</strong> The Best Programmer <strong>EVER</strong>.</p>
+                    <p>Olá! Meu nome é <strong>Pedro Bertoldo</strong> The Best Data Analyst <strong>EVER</strong>.</p>
                     <p>Como um bom DevOps, é bom a maioria das coisas tem que estar em containeres...</p>
                     <div class="sobre-botoes">
                         <p><a href="https://www.linkedin.com/in/pedro-bertoldo-a68812252/">Linkedin</a></p>
@@ -49,24 +48,26 @@
     <section id="projetos">
         <div class="container">
             <h2>Projetos</h2>
-            <div class="carrossel-wrapper">
-                <button class="seta esquerda" onclick="scrollProjetos(-1)">&#8592;</button>
-    
-                <div class="projetos-grid" id="projetosGrid">
-                    <!-- Cards -->
-                    <div class="projeto-card">Projeto 1</div>
-                    <div class="projeto-card">Projeto 2</div>
-                    <div class="projeto-card">Projeto 3</div>
-                    <div class="projeto-card">Projeto 4</div>
-                    <div class="projeto-card">Projeto 5</div>
-                    <!-- Adicione mais se quiser -->
+
+            <div class="slides-wrapper-target">
+                <div class="slides-target">
+                    <div class="slide-target" id="content-slide1">
+                        <img src="https://via.placeholder.com/600x300/8E44AD/FFFFFF?text=Slide+1+(Target)"
+                            alt="Slide 1">
+                    </div>
+                    <div class="slide-target" id="content-slide2">
+                        <img src="https://via.placeholder.com/600x300/3498DB/FFFFFF?text=Slide+2+(Target)"
+                            alt="Slide 2">
+                    </div>
+                    <div class="slide-target" id="content-slide3">
+                        <img src="https://via.placeholder.com/600x300/E67E22/FFFFFF?text=Slide+3+(Target)"
+                            alt="Slide 3">
+                    </div>
                 </div>
-    
-                <button class="seta direita" onclick="scrollProjetos(1)">&#8594;</button>
             </div>
         </div>
     </section>
-    
+
     <!-- Seção Habilidades -->
     <section id="habilidades">
         <div class="container">
@@ -107,33 +108,28 @@
     </section>
 
     <!-- Seção Contato -->
-    <section id="contato">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em contato comigo preenchendo o formulário abaixo ou através das minhas redes sociais.</p>
-            <!-- Formulário de contato -->
-            <form>
-                <!-- Campo Nome -->
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-                </div>
-                <!-- Campo Email -->
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-                </div>
-                <!-- Campo Mensagem -->
-                <div class="form-group">
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..."
-                        required></textarea>
-                </div>
-                <!-- Botão de envio -->
-                <button type="submit">Enviar</button>
-            </form>
+
+    <p class="contato1">Gostou do que viu ou tem alguma dúvida? Entre em contato comigo preenchendo o formulário abaixo.
+    </p>
+    <form action="https://formsubmit.co/peu.bertoldo@gmail.com?subject=Contato pelo Portfólio" method="post" enctype="text/plain">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
         </div>
-    </section>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+        <div class="form-group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."
+                required></textarea>
+        </div>
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="btn">Enviar Mensagem</button>
+        <input type="hidden" name="_next" value="https://seudominio.com/obrigado.html">
+
+    </form>
 
     <!-- Rodapé -->
     <footer>

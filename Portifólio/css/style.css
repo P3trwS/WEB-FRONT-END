@@ -1,123 +1,402 @@
 /* GLOBAL */
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    max-width: 100%;
-    margin: 0;
-}
-
-strong {
-    color: #3d8bc1;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-    border: #3d8bc1 1px solid;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-/* HEADER */
-
-nav {
-    padding: 5px;
-    align-items: center;
-    background-color: #1A1A1A;
-    border-bottom: #3d8bc1 1px solid;
-}
-
-.nav-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-/* SOBRE MIM */
-
-#sobre {
-    margin: 10px;
-}
-
-.sobre-conteudo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin: 10px;
-}
-
-.sobre-texto{
-    padding: 10px;
-    margin: 10px;
-    text-align: left;
-}
-
-.sobre-botoes{
-    margin-top: 15px;
-}
-
-.sobre-botoes p{
-    padding: 10px;
-}
-
-/* PROJETOS */
-
-
-.carrossel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
+/* Definindo a Paleta de Cores como Variáveis CSS */
+:root {
+    --color-1: #0c0c0c; /* Preto mais profundo */
+    --color-2: #191919; /* Preto/Cinza escuro */
+    --color-3: #262626; /* Cinza escuro */
+    --color-4: #323232; /* Cinza médio */
+    --color-5: #20455e; /* Azul escuro acinzentado */
+    --color-6: #265372; /* Azul médio */
+    --color-7: #2c6185; /* Azul */
+    --color-8: #326f99; /* Azul mais claro */
+    --color-9: #377dad; /* Azul claro */
+    --color-10: #3d8bc1;/* Azul brilhante (destaque) */
+  
+    --text-light: #f0f0f0; /* Cor de texto clara */
+    --border-radius-medium: 10px;
+    --border-radius-large: 15px;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total */
+  }
+  
+  body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--color-1); /* Fundo principal */
+      color: var(--text-light);       /* Cor de texto padrão */
+      line-height: 1.6; /* Melhora a legibilidade */
+  }
+  
+  .container {
+      width: 90%;
+      max-width: 1100px; /* Limita a largura máxima */
+      margin: 0 auto; /* Centraliza o conteúdo */
+      padding: 20px 0;
+  }
+  
+  h2 {
+      color: var(--color-10); /* Cor de destaque para títulos */
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 2em;
+  }
+  
+  strong {
+      color: var(--color-10); /* Mantém a cor de destaque */
+      font-weight: bold; /* Garante que seja negrito */
+  }
+  
+  a { /* Estilo geral para links - pode ser sobrescrito */
+      color: var(--color-9);
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+  
+  a:hover {
+      color: var(--color-10);
+  }
+  
+  section {
+      padding: 40px 0; /* Espaçamento entre seções */
+      border-bottom: 1px solid var(--color-4); /* Linha sutil entre seções */
+  }
+  section:last-of-type {
+      border-bottom: none; /* Remove a borda da última seção */
+  }
+  
+  
+  /* HEADER */
+  
+  nav {
+      padding: 10px 0; /* Aumenta um pouco o padding */
+      background-color: var(--color-2); /* Cor de fundo da navegação */
+      border-bottom: 2px solid var(--color-10); /* Borda inferior mais destacada */
+      position: sticky; /* Faz a navegação ficar fixa no topo */
+      top: 0;
+      z-index: 100; /* Garante que fique sobre outros elementos */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+  }
+  
+  .nav-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px; /* Espaço entre os links */
+  }
+  
+  .nav-header a {
+      color: var(--text-light);
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid transparent; /* Borda inicial transparente */
+      border-radius: var(--border-radius-medium);
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-header a:hover {
+      background-color: var(--color-7);
+      border-color: var(--color-9);
+      color: white;
+  }
+  
+  /* SOBRE MIM */
+  
+  #sobre {
+      
+  }
+  
+  .sobre-conteudo{
+      display: flex;
+      flex-direction: column; /* Empilha em telas menores */
+      align-items: center; /* Centraliza itens empilhados */
+      gap: 30px; /* Espaço entre imagem e texto */
+      text-align: center; /* Centraliza texto */
+  }
+  
+  /* Muda para lado a lado em telas maiores */
+  @media (min-width: 768px) {
+      .sobre-conteudo {
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: flex-start;
+          text-align: left;
+      }
+  }
+  
+  .perfil-img {
+      border-radius: 50%; /* Deixa a imagem redonda */
+      border: 3px solid var(--color-10); /* Borda com cor de destaque */
+      width: 150px; /* Tamanho fixo */
+      height: 150px;
+      object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  }
+  
+  .sobre-texto {
+      max-width: 600px; /* Limita a largura do texto */
+  }
+  
+  .sobre-texto p {
+      margin-bottom: 15px; /* Espaço entre parágrafos */
+  }
+  
+  .sobre-botoes {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px; /* Espaço entre botões */
+      justify-content: center; /* Centraliza botões quando em coluna */
+  }
+  
+  @media (min-width: 768px) {
+      .sobre-botoes {
+          justify-content: flex-start; /* Alinha à esquerda em telas maiores */
+      }
+  }
+  
+  .sobre-botoes a { /* Estilo específico para os botões/links de Sobre Mim */
+      display: inline-block; 
+      padding: 10px 20px;
+      border: 1px solid var(--color-8);
+      background-color: var(--color-6);
+      color: var(--text-light);
+      border-radius: var(--border-radius-medium);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .sobre-botoes a:hover {
+      background-color: var(--color-8);
+      border-color: var(--color-10);
+      color: white;
+  }
+  
+  /* PROJETOS */
+  
+  #projetos .container {
+      
+  }
+  
+  /* Estilo dos Links de Navegação do Slider */
+  .navigation-links {
+      text-align: center;
+      margin-bottom: 20px; /* Espaço entre os links e o slider */
+  }
+  
+  .nav-link {
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 0 6px;
+      background-color: var(--color-5); /* Cor de fundo dos botões de navegação */
+      color: var(--text-light);
+      text-decoration: none;
+      border-radius: var(--border-radius-medium); /* Bordas arredondadas */
+      border: 1px solid var(--color-7);
+      font-size: 0.9em;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .nav-link:hover {
+      background-color: var(--color-7);
+      transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
+  }
+  
+  /* Âncoras invisíveis - não precisam de estilo visual */
+  .target-anchor {
+    display: none;
+  }
+  
+  /* Wrapper que esconde os slides fora da área visível */
+  .slides-wrapper-target {
+    max-width: 700px; /* Defina a largura máxima desejada para o slider */
+    margin: 0 auto; /* Centraliza o slider */
     overflow: hidden;
-}
-
-.projetos-grid {
+    border-radius: var(--border-radius-large); /* Bordas bem arredondadas para o wrapper */
+    border: 2px solid var(--color-8); /* Borda sutil no wrapper */
+    background-color: var(--color-2); /* Fundo caso a imagem não carregue */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidade */
+  }
+  
+  /* Contêiner flex que move os slides */
+  .slides-target {
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 1rem;
-    padding: 1rem 0;
-    width: 100%;
-    scrollbar-width: none; /* Firefox */
-}
-.projetos-grid::-webkit-scrollbar {
-    display: none; /* Chrome */
-}
-
-.projeto-card {
-    min-width: 300px;
-    flex: 0 0 auto;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.seta {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255,255,255,0.8);
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 10;
-    padding: 0.5rem;
-}
-.seta.esquerda {
-    left: 0;
-}
-.seta.direita {
-    right: 0;
-}
+    /* A largura depende do número de slides (N): width = N * 100% */
+    width: 300%; /* 3 slides = 300% */
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transição suave com efeito */
+  }
+  
+  /* Cada slide individual */
+  .slide-target {
+    /* A largura depende do número de slides (N): width = 100 / N % */
+    width: 33.333%; /* 3 slides = 100 / 3 */
+    flex-shrink: 0; /* Impede que os slides encolham */
+    /* O border-radius no wrapper já corta a imagem, mas pode adicionar aqui se quiser */
+    /* border-radius: var(--border-radius-large); */
+  }
+  
+  .slide-target img {
+    width: 100%; /* Garante que a imagem ocupe todo o espaço do slide */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    /* O border-radius do wrapper já deve funcionar, mas caso não, descomente a linha abaixo */
+    /* border-radius: calc(var(--border-radius-large) - 2px); Ajusta pelo border do wrapper */
+  
+  }
+  
+  /* Regras :target para mover o contêiner .slides-target */
+  /* Use os IDs das âncoras invisíveis */
+  #slide1-proj:target ~ .slides-wrapper-target .slides-target {
+    transform: translateX(0%);
+  }
+  #slide2-proj:target ~ .slides-wrapper-target .slides-target {
+    /* Move -1 * (100 / N) % */
+    transform: translateX(-33.333%);
+  }
+  #slide3-proj:target ~ .slides-wrapper-target .slides-target {
+    /* Move -2 * (100 / N) % */
+    transform: translateX(-66.666%);
+  }
+  /* Adicione mais regras #slideN-proj:target se tiver mais slides */
+  
+  
+  /* HABILIDADES */
+  
+  #habilidades {
+      background-color: var(--color-2); /* Fundo levemente diferente */
+      border-radius: var(--border-radius-large); /* Bordas arredondadas para a seção */
+      margin: 40px auto; /* Adiciona margem vertical e centraliza */
+      padding: 30px; /* Padding interno */
+      max-width: 800px; /* Limita a largura */
+  }
+  
+  .skills-list {
+      list-style: none; /* Remove marcadores padrão */
+      padding: 0;
+      column-count: 1; /* Começa com uma coluna */
+  }
+  
+  /* Divide em colunas em telas maiores */
+  @media (min-width: 576px) {
+      .skills-list {
+          column-count: 2;
+      }
+  }
+  @media (min-width: 992px) {
+      .skills-list {
+          column-count: 3;
+      }
+  }
+  
+  .skills-list > li {
+      background-color: var(--color-3);
+      margin-bottom: 15px; /* Espaço entre itens principais */
+      padding: 15px;
+      border-radius: var(--border-radius-medium);
+      border-left: 4px solid var(--color-10); /* Destaque na esquerda */
+      break-inside: avoid-column; /* Evita que um item quebre entre colunas */
+      font-weight: bold;
+      color: var(--text-light);
+  }
+  
+  .skills-list > li > ul {
+      list-style: square; /* Marcador para sub-itens */
+      margin-top: 10px;
+      margin-left: 20px; /* Indentação da sub-lista */
+      padding-left: 10px;
+  }
+  
+  .skills-list > li > ul > li {
+      font-weight: normal;
+      color: #ccc; /* Cor mais suave para sub-itens */
+      margin-bottom: 5px;
+  }
+  
+  /* CONTATO */
+  
+  /* Estilo para o parágrafo introdutório do formulário */
+  .contato1 {
+      text-align: center;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  form {
+      max-width: 600px;
+      margin: 20px auto; /* Centraliza o formulário */
+      padding: 30px;
+      background-color: var(--color-2);
+      border-radius: var(--border-radius-large);
+      border: 1px solid var(--color-4);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-group {
+      margin-bottom: 20px;
+  }
+  
+  .form-group label {
+      display: block; /* Coloca o label acima do input */
+      margin-bottom: 8px;
+      color: var(--color-9);
+      font-weight: bold;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+      width: 100%; /* Ocupa toda a largura disponível */
+      padding: 12px;
+      border: 1px solid var(--color-5);
+      background-color: var(--color-3);
+      border-radius: var(--border-radius-medium);
+      color: var(--text-light);
+      font-size: 1em;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group input[type="email"]:focus,
+  .form-group textarea:focus {
+      outline: none; /* Remove o outline padrão */
+      border-color: var(--color-10); /* Muda a cor da borda ao focar */
+      box-shadow: 0 0 5px var(--color-10); /* Efeito de brilho suave */
+  }
+  
+  .form-group textarea {
+      resize: vertical; /* Permite redimensionar apenas verticalmente */
+      min-height: 100px;
+  }
+  
+  button.btn { /* Seletor mais específico para o botão do formulário */
+      display: block; /* Faz o botão ocupar a largura total */
+      width: 100%;
+      padding: 15px;
+      background-color: var(--color-10); /* Cor de destaque */
+      color: white;
+      border: none;
+      border-radius: var(--border-radius-medium);
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button.btn:hover {
+      background-color: var(--color-8); /* Cor mais escura no hover */
+      transform: translateY(-2px);
+  }
+  
+  
+  /* RODAPÉ */
+  
+  footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px; /* Espaço acima do rodapé */
+      background-color: var(--color-2);
+      border-top: 1px solid var(--color-4);
+      color: #aaa; /* Cor de texto mais suave para o rodapé */
+      font-size: 0.9em;
+  }
