@@ -106,10 +106,6 @@
   
   /* SOBRE MIM */
   
-  #sobre {
-      
-  }
-  
   .sobre-conteudo{
       display: flex;
       flex-direction: column; /* Empilha em telas menores */
@@ -175,90 +171,27 @@
   
   /* PROJETOS */
   
-  #projetos .container {
-      
-  }
-  
-  /* Estilo dos Links de Navegação do Slider */
-  .navigation-links {
-      text-align: center;
-      margin-bottom: 20px; /* Espaço entre os links e o slider */
-  }
-  
-  .nav-link {
-      display: inline-block;
-      padding: 8px 16px;
-      margin: 0 6px;
-      background-color: var(--color-5); /* Cor de fundo dos botões de navegação */
-      color: var(--text-light);
-      text-decoration: none;
-      border-radius: var(--border-radius-medium); /* Bordas arredondadas */
-      border: 1px solid var(--color-7);
-      font-size: 0.9em;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .nav-link:hover {
-      background-color: var(--color-7);
-      transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
-  }
-  
-  /* Âncoras invisíveis - não precisam de estilo visual */
-  .target-anchor {
-    display: none;
-  }
-  
-  /* Wrapper que esconde os slides fora da área visível */
-  .slides-wrapper-target {
-    max-width: 700px; /* Defina a largura máxima desejada para o slider */
-    margin: 0 auto; /* Centraliza o slider */
-    overflow: hidden;
-    border-radius: var(--border-radius-large); /* Bordas bem arredondadas para o wrapper */
-    border: 2px solid var(--color-8); /* Borda sutil no wrapper */
-    background-color: var(--color-2); /* Fundo caso a imagem não carregue */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidade */
-  }
-  
-  /* Contêiner flex que move os slides */
-  .slides-target {
-    display: flex;
-    /* A largura depende do número de slides (N): width = N * 100% */
-    width: 300%; /* 3 slides = 300% */
-    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transição suave com efeito */
-  }
-  
-  /* Cada slide individual */
-  .slide-target {
-    /* A largura depende do número de slides (N): width = 100 / N % */
-    width: 33.333%; /* 3 slides = 100 / 3 */
-    flex-shrink: 0; /* Impede que os slides encolham */
-    /* O border-radius no wrapper já corta a imagem, mas pode adicionar aqui se quiser */
-    /* border-radius: var(--border-radius-large); */
-  }
-  
-  .slide-target img {
-    width: 100%; /* Garante que a imagem ocupe todo o espaço do slide */
-    display: block; /* Remove espaço extra abaixo da imagem */
-    /* O border-radius do wrapper já deve funcionar, mas caso não, descomente a linha abaixo */
-    /* border-radius: calc(var(--border-radius-large) - 2px); Ajusta pelo border do wrapper */
-  
-  }
-  
-  /* Regras :target para mover o contêiner .slides-target */
-  /* Use os IDs das âncoras invisíveis */
-  #slide1-proj:target ~ .slides-wrapper-target .slides-target {
-    transform: translateX(0%);
-  }
-  #slide2-proj:target ~ .slides-wrapper-target .slides-target {
-    /* Move -1 * (100 / N) % */
-    transform: translateX(-33.333%);
-  }
-  #slide3-proj:target ~ .slides-wrapper-target .slides-target {
-    /* Move -2 * (100 / N) % */
-    transform: translateX(-66.666%);
-  }
-  /* Adicione mais regras #slideN-proj:target se tiver mais slides */
-  
+
+  .project-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--color-10);
+    border-radius: 5px;
+}
+
+.project-list h3 {
+    margin-top: 0;
+    color: var(--color-9);
+}
+
+.project-list p {
+    color: #ffffff;
+}
   
   /* HABILIDADES */
   
