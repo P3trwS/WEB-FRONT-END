@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/forms.css">
+    <title>Formulário</title>
+</head>
+<body>
+    <table class="estrutura_inicial">
+        <tr class="estrutura_linha">
+            <td class="estrutura_form">
+                <form id="formulario" action="">
+                    <label for="nome" class="estrutura_lab">Nome</label>
+                    <input type="text" id="nome" name="nome">
+                    <label for="email" class="estrutura_lab">Email</label>
+                    <input type="email" id="email" name="email">
+                    <label for="Fone" class="estrutura_lab">Fone</label>
+                    <input type="number" id="fone" name="fone">
+                    <label for="mensagem" class="estrutura_lab">Mensagem</label>
+                    <input type="text" id="mensagem" name="mensagem">
+                    <label for="data_cadastro" class="estrutura_lab">Data Cadastro</label>
+                    <input type="datetime" id="data_cadastro" name="data_cadastro">
+                    <label for="tipo_contato" class="estrutura_lab">Tipo Contato</label>
+                    <input type="text" id="tipo_contato" name="tipo_contato">
+                </form>
+            </td>
+            <td class="estrutura_grid">
+                <table id="grid">
+                    <tr id="grid_linha">
+                        <td id="g_nome">Nome</td>
+                        <td id="g_email">Email</td>
+                        <td id="g_fone">Fone</td>
+                        <td id="g_mensagem">Mensagem</td>
+                        <td id="g_data_cadastro">Cadastro</td>
+                        <td id="g_tipo_contato">Tipo Contato</td> <!--Checkbox-->
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <button id="enviar">Enviar</button>
+    <button id="limpar">Limpar</button>
+</body>
+<script src="js/forms.js"></script>
+</html>
+
+
+
